@@ -2,9 +2,7 @@
     # Commands to start on workspace startup
 tasks:
   - before: sudo apt install mysql-server
-  - name: Terminal
-    command: >
-      mysql -e "CREATE DATABASE iclip;";    
+
 
        
 # Ports to expose on workspace startup
