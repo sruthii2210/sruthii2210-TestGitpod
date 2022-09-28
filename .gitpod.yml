@@ -3,7 +3,7 @@
     # Commands to start on workspace startup
 tasks:
   - before: sudo apt install mysql-server
-  - command: echo "$GITPOD_WORKSPACE_URL"
+  - command: echo $GITPOD_WORKSPACE_URL
 
 
 
