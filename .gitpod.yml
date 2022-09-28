@@ -1,14 +1,2 @@
-# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
-# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
-    # Commands to start on workspace startup
 tasks:
-  - before: sudo apt install mysql-server
-  - command: echo $GITPOD_WORKSPACE_URL
-
-
-
-       
-# Ports to expose on workspace startup
-ports:
-  - port: 8000
-    onOpen: open-preview 
+  - command: echo -e "\n\nwebhook url - $(gp url 3000)/webhook \n\nCopy and paste this url in the Dialogflow console"
