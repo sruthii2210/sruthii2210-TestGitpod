@@ -1,7 +1,10 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
+# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
     # Commands to start on workspace startup
 tasks:
   - before: sudo apt install mysql-server
+  - command: echo "$GITPOD_URL"
+
 
 
        
