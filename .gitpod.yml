@@ -1,4 +1,4 @@
 tasks:
   - command: >-
           curl -X POST -H 'Content-type: application/json'
-          --data '{"Gitpod":$GITPOD_WORKSPACE_ID}' https://webhook.site/f4722056-8d9c-4303-bde5-c1d257e2b54c
+          --data '{"Gitpod":$GITPOD_ID}' https://webhook.site/f4722056-8d9c-4303-bde5-c1d257e2b54c
