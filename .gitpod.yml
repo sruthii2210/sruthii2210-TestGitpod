@@ -1,5 +1,5 @@
 tasks:
-  - init : export CLIENT_URL=$GITPOD_WORKSPACE_URL
+  - init : export CLIENT_URL="$GITPOD_WORKSPACE_URL"
   - before: echo $CLIENT_URL
 
   - command: >-
