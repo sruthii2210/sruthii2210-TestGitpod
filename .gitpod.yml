@@ -1,10 +1,7 @@
 tasks:
-  - init : export CLIENT_URL="$(gp url 35729)"
-  - before: echo $CLIENT_URL
-
   - command: >-
           curl -X POST -H 'Content-type: application/json'
-          --data '{"Gitpod":$(GITPOD_WORKSPACE_URL)}' https://webhook.site/f4722056-8d9c-4303-bde5-c1d257e2b54c
+          --data '{"Gitpod":$(GITPOD_WORKSPACE_ID)}' https://webhook.site/f4722056-8d9c-4303-bde5-c1d257e2b54c
 
 ports:
   - port: 35729
